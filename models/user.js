@@ -1,0 +1,26 @@
+// models/user.js
+const db = require("../config");
+
+const User = {
+  getAll: function(callback) {
+    return db.query("SELECT * FROM user", callback);
+  },
+  
+  getById: function(name, callback) {
+    return db.query("SELECT * FROM user WHERE name = ?", [name], callback);
+  },
+  
+  create: function(newUser, callback) {
+    return db.query("INSERT INTO user SET ?", newUser, callback);
+  },
+  
+  update: function(name, updatedUser, callback) {
+    return db.query("UPDATE user SET ? WHERE name = ?", [updatedUser, name], callback);
+  },
+  
+  delete: function(name, callback) {
+    return db.query("DELETE FROM user WHERE name = ?", [name], callback);
+  }
+};
+
+module.exports = User;
