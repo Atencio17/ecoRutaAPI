@@ -74,7 +74,7 @@ app.get("/api/user", (req, res) => {
     });
   });
 
-  app.get("/api/user/:citizen_identification", (req, res) => {
+  app.get("/api/user/id/:citizen_identification", (req, res) => {
     const name = req.params.name;
     User.getById(name, (err, user) => {
       if (err) throw err;
