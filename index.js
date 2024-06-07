@@ -91,7 +91,7 @@ app.post("/api/user", (req, res) => {
   });
 });
 
-app.put("/api/user/citizen_identification/:citizen_identification", (req, res) => {
+app.put("/api/user/citizen_identification/update/:citizen_identification", (req, res) => {
   const citizen_identification = req.params.citizen_identification;
   const updatedUser = req.body;
   User.update(citizen_identification, updatedUser, (err, result) => {
