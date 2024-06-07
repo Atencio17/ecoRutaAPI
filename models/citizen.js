@@ -1,6 +1,6 @@
 // models/user.js
 const db = require("../config");
-
+ 
 const Citizen = {
   getAll: function(callback) {
     return db.query("SELECT * FROM citizen", callback);

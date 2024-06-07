@@ -73,6 +73,15 @@ app.get("/api/user", (req, res) => {
       res.json(user);
     });
   });
+
+  app.get("/api/user/:citizen_identification", (req, res) => {
+    const name = req.params.name;
+    User.getById(name, (err, user) => {
+      if (err) throw err;
+      if (!user) return res.status(404).send("Usuario no encontrado");
+      res.json(user);
+    });
+  });
   
   app.post("/api/user", (req, res) => {
     const newUser = req.body;

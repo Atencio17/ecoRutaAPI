@@ -1,6 +1,6 @@
 // models/user.js
 const db = require("../config");
-
+ 
 const User = {
   getAll: function(callback) {
     return db.query("SELECT * FROM user", callback);
@@ -8,6 +8,10 @@ const User = {
   
   getById: function(name, callback) {
     return db.query("SELECT * FROM user WHERE name = ?", [name], callback);
+  },
+
+  getByUserId: function(citizen_identification, callback) {
+    return db.query("SELECT * FROM user WHERE citizen_identification = ?", [citizen_identification], callback);
   },
   
   create: function(newUser, callback) {
