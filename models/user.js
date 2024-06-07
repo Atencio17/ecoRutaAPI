@@ -18,8 +18,8 @@ const User = {
     return db.query("INSERT INTO user SET ?", newUser, callback);
   },
 
-  update: function (name, updatedUser, callback) {
-    return db.query("UPDATE user SET ? WHERE name = ?", [updatedUser, name], callback);
+  update: function (citizen_identification, updatedUser, callback) {
+    return db.query("UPDATE user SET ? WHERE citizen_identification = ?", [updatedUser, citizen_identification], callback);
   },
 
   delete: function (name, callback) {
