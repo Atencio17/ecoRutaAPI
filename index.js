@@ -75,8 +75,8 @@ app.get("/api/user", (req, res) => {
   });
 
   app.get("/api/user/id/:citizen_identification", (req, res) => {
-    const name = req.params.name;
-    User.getById(name, (err, user) => {
+    const citizen_identification = req.params.citizen_identification;
+    User.getById(citizen_identification, (err, user) => {
       if (err) throw err;
       if (!user) return res.status(404).send("Usuario no encontrado");
       res.json(user);
